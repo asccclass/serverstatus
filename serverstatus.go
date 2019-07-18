@@ -1,10 +1,10 @@
-package ServerStatus
+package serverstatus
 
 import(
    "net/http"
 )
 
-type SrvStatus {
+type SrvStatus struct {
 }
 
 func NewServerStatus()(*SrvStatus) {
