@@ -5,16 +5,19 @@ import(
 )
 
 type SrvStatus struct {
+   SystemName	string
 }
 
-func NewServerStatus()(*SrvStatus) {
+func NewServerStatus(systemName string)(*SrvStatus) {
    return  &SrvStatus{
+      SystemName: systemName,
    }
 }
 
 // check health
 func(srv *SrvStatus) Healthz(w http.ResponseWriter, r *http.Request) {
-  w.Header().Set("Content-Type", "application/json")
-  w.WriteHeader(http.StatusOK)
+   w.Header().Set("Content-Type", "application/json;charset=UTF-8")
+   w.WriteHeader(http.StatusOK)
+   fmt.Fprintf(w, "{\"status\": \"ok\"}")
 }
 
