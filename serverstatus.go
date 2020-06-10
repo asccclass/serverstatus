@@ -1,4 +1,7 @@
 package serverstatus
+/*
+   function: 系統檢康檢查用
+*/
 
 import(
    "net/http"
