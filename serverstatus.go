@@ -4,6 +4,7 @@ package serverstatus
 */
 
 import(
+   "fmt"
    "net/http"
 )
 
