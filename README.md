@@ -9,6 +9,8 @@
 ```
 import "github.com/asccclass/serverstatus"
 
-m := serverstatus.NewServerStatus()
-router.HandleFunc("/healthz", m.Healthz).Methods("GET")
+// health check
+systemName := os.Getenv("SystemName")
+h := serverstatus.NewServerStatus(systemName)
+router.HandleFunc("/healthz", h.Healthz).Methods("GET")
 ```
