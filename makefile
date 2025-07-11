@@ -39,3 +39,5 @@ log:
 
 rm:
 	docker rm ${ContainerName}
+s:
+	git push -u origin master

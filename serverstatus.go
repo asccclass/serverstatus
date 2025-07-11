@@ -18,6 +18,10 @@ func NewServerStatus(systemName string)(*SrvStatus) {
    }
 }
 
+func(app *SrvStatus) AddRouter(router *http.ServeMux) {
+   router.Handle("GET /healthz", http.HandlerFunc(app.Healthz))
+}
+
 // check health
 func(srv *SrvStatus) Healthz(w http.ResponseWriter, r *http.Request) {
    w.Header().Set("Content-Type", "application/json;charset=UTF-8")
